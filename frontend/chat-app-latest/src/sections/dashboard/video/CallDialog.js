@@ -30,8 +30,8 @@ const CallDialog = ({ open, handleClose }) => {
 
   const { token } = useSelector((state) => state.auth);
 
-  const appID = 1642584767;
-  const server = "wss://webliveroom1642584767-api.coolzcloud.com/ws";
+  const appID = 1634701431;
+  const server = "wss://webliveroom1634701431-api.coolzcloud.com/ws";
 
   // roomID => ID of conversation => current_conversation.id
   // token => generate on backend & get on App
@@ -54,7 +54,7 @@ const CallDialog = ({ open, handleClose }) => {
     if (reason && reason === "backdropClick") {
       return;
     } else {
-      // clean up event listners
+      // clean up event listeners
       socket?.off("video_call_accepted");
       socket?.off("video_call_denied");
       socket?.off("video_call_missed");
@@ -117,7 +117,7 @@ const CallDialog = ({ open, handleClose }) => {
     }
 
     socket.on("video_call_denied", () => {
-      // TODO => You can play an audio indicating call is denined
+      // TODO => You can play an audio indicating call is denialable
       // ABORT CALL
       handleDisconnect();
     });

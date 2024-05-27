@@ -77,13 +77,13 @@ exports.sendOTP = catchAsync(async (req, res, next) => {
   console.log(new_otp);
 
   // TODO send mail
-  mailService.sendEmail({
-    from: "shreyanshshah242@gmail.com",
-    to: user.email,
-    subject: "Verification OTP",
-    html: otp(user.firstName, new_otp),
-    attachments: [],
-  });
+  //  mailService.sendEmail({
+  //   from: "shreyanshshah242@gmail.com",
+  //   to: user.email,
+  //   subject: "Verification OTP",
+  //   html: otp(user.firstName, new_otp),
+  //   attachments: [],
+  // });
 
   res.status(200).json({
     status: "success",
@@ -151,7 +151,7 @@ exports.login = catchAsync(async (req, res, next) => {
     return;
   }
 
-  if (!user || !(await user.correctPassword(password, user.password))) {
+  if (!user || (await user.correctPassword(password, user.password))) {
     res.status(400).json({
       status: "error",
       message: "Email or password is incorrect",
