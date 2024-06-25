@@ -27,7 +27,7 @@ export default function SettingContrast() {
   return (
     <RadioGroup name="themeContrast" value={themeContrast} onChange={onChangeContrast}>
       <Grid dir="ltr" container spacing={2.5}>
-        {['default', 'bold'].map((contrast, index) => {
+        {['default', 'bold']?.map((contrast, index) => {
           const isSelected = themeContrast === contrast;
 
           return (

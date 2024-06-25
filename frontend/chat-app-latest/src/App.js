@@ -24,7 +24,6 @@ function App() {
   const { severity, message, open } = useSelector(
     (state) => state.app.snackbar
   );
-
   return (
     <>
       <ThemeProvider>

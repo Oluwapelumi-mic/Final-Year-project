@@ -131,7 +131,7 @@ const Chats = () => {
                   All Chats
                 </Typography>
                 {/* Chat List */}
-                {conversations.filter((el) => !el.pinned).map((el, idx) => {
+                {conversations.filter((el) => !el.pinned)?.map((el, idx) => {
                   return <ChatElement {...el} />;
                 })}
               </Stack>

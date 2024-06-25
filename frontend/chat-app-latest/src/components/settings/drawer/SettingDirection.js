@@ -27,7 +27,7 @@ export default function SettingDirection() {
   return (
     <RadioGroup name="themeDirection" value={themeDirection} onChange={onChangeDirection}>
       <Grid dir="ltr" container spacing={2.5}>
-        {['ltr', 'rtl'].map((direction, index) => {
+        {['ltr', 'rtl']?.map((direction, index) => {
           const isSelected = themeDirection === direction;
 
           return (

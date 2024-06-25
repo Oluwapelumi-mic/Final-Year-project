@@ -35,7 +35,7 @@ export default function RHFCodes({ keyName = "", inputs = [], ...other }) {
 
   return (
     <Stack direction="row" spacing={2} justifyContent="center" ref={codesRef}>
-      {inputs.map((name, index) => (
+      {inputs?.map((name, index) => (
         <Controller
           key={name}
           name={`${keyName}${index + 1}`}

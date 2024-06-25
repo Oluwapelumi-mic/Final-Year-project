@@ -92,10 +92,10 @@ const Media = () => {
                   </Grid>
                 );
               case 1:
-                return Shared_links.map((el) => <LinkMsg el={el} />);
+                return Shared_links?.map((el) => <LinkMsg el={el} />);
 
               case 2:
-                return Shared_docs.map((el) => <DocMsg el={el} />);
+                return Shared_docs?.map((el) => <DocMsg el={el} />);
 
               default:
                 break;

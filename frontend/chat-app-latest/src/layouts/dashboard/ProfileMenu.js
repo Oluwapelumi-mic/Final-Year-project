@@ -60,7 +60,7 @@ const ProfileMenu = () => {
       >
         <Box p={1}>
           <Stack spacing={1}>
-            {Profile_Menu.map((el, idx) => (
+            {Profile_Menu?.map((el, idx) => (
               <MenuItem onClick={handleClose}>
                 <Stack
                   onClick={() => {

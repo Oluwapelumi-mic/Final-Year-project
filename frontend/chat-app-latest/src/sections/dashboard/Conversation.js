@@ -45,8 +45,8 @@ const MessageOption = () => {
         }}
       >
         <Stack spacing={1} px={1}>
-          {Message_options.map((el) => (
-            <MenuItem onClick={handleClose}>{el.title}</MenuItem>
+          {Message_options?.map((el) => (
+            <MenuItem onClick={handleClose}>{el?.title}</MenuItem>
           ))}
         </Stack>
       </Menu>
@@ -73,7 +73,7 @@ const TextMsg = ({ el, menu }) => {
           variant="body2"
           color={el.incoming ? theme.palette.text : "#fff"}
         >
-          {el.message}
+          {el?.message}
         </Typography>
       </Box>
       {menu && <MessageOption />}
@@ -252,7 +252,7 @@ const Timeline = ({ el }) => {
     <Stack direction="row" alignItems={"center"} justifyContent="space-between">
       <Divider width="46%" />
       <Typography variant="caption" sx={{ color: theme.palette.text }}>
-        {el.text}
+        {el?.text}
       </Typography>
       <Divider width="46%" />
     </Stack>

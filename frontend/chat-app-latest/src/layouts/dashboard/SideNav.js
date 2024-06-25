@@ -87,7 +87,7 @@ const SideBar = () => {
             alignItems={"center"}
             spacing={3}
           >
-            {Nav_Buttons.map((el) => {
+            {Nav_Buttons?.map((el) => {
               return el.index == selectedTab ? (
                 <Box
                   sx={{
@@ -123,7 +123,7 @@ const SideBar = () => {
               );
             })}
             <Divider sx={{ width: 48 }} />
-            {Nav_Setting.map((el) => {
+            {Nav_Setting?.map((el) => {
               return el.index == selectedTab ? (
                 <Box
                   sx={{

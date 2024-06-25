@@ -26,7 +26,7 @@ export default function SettingColorPresets() {
   return (
     <RadioGroup name="themeColorPresets" value={themeColorPresets} onChange={onChangeColor}>
       <Grid dir="ltr" container spacing={1.5}>
-        {colorOption.map((color) => {
+        {colorOption?.map((color) => {
           const colorName = color.name;
           const colorValue = color.value;
           const isSelected = themeColorPresets === colorName;

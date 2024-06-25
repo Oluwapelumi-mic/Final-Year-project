@@ -7,7 +7,7 @@ const filterObj = require("../utils/filterObj");
 
 // Model
 const User = require("../models/user");
-const otp = require("../Templates/Mail/otp");
+const otp = require("../Templates/Mail/otp-old");
 const resetPassword = require("../Templates/Mail/resetPassword");
 const { promisify } = require("util");
 const catchAsync = require("../utils/catchAsync");
@@ -84,6 +84,10 @@ exports.sendOTP = catchAsync(async (req, res, next) => {
   //   html: otp(user.firstName, new_otp),
   //   attachments: [],
   // });
+
+  const message = await verify({ url: link, year: new Date().getFullYear() });
+
+  await sendEmail(email, 'Verify OTP', message);
 
   res.status(200).json({
     status: "success",

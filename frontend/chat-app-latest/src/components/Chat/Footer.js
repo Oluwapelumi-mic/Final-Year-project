@@ -95,7 +95,7 @@ const ChatInput = ({
                 display: openActions ? "inline-block" : "none",
               }}
             >
-              {Actions.map((el) => (
+              {Actions?.map((el) => (
                 <Tooltip placement="right" title={el.title}>
                   <Fab
                     onClick={() => {
@@ -257,7 +257,7 @@ const Footer = () => {
                     message: linkify(value),
                     conversation_id: room_id,
                     from: user_id,
-                    to: current_conversation.user_id,
+                    to: current_conversation?.user_id,
                     type: containsUrl(value) ? "Link" : "Text",
                   });
                 }}

@@ -20,7 +20,7 @@ export default function AuthLoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const {isLoading} = useSelector((state) => state.auth);
-
+console.log(isLoading)
   const LoginSchema = Yup.object().shape({
     email: Yup.string()
       .required("Email is required")

@@ -43,7 +43,7 @@ const Conversation = ({ isMobile, menu }) => {
   return (
     <Box p={isMobile ? 1 : 3}>
       <Stack spacing={3}>
-        {current_messages.map((el, idx) => {
+        {current_messages?.map((el, idx) => {
           switch (el.type) {
             case "divider":
               return (
