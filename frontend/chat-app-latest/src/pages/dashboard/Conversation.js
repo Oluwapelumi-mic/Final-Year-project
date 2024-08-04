@@ -27,6 +27,7 @@ const Conversation = ({ isMobile, menu }) => {
   const { conversations, current_messages } = useSelector(
     (state) => state.conversation.direct_chat
   );
+
   const { room_id } = useSelector((state) => state.app);
 
   useEffect(() => {
@@ -34,12 +35,12 @@ const Conversation = ({ isMobile, menu }) => {
 
     socket.emit("get_messages", { conversation_id: current?.id }, (data) => {
       // data => list of messages
-      console.log(data, "List of messages");
+
       dispatch(FetchCurrentMessages({ messages: data }));
     });
 
     dispatch(SetCurrentConversation(current));
-  }, []);
+  }, [current_messages, room_id]);
   return (
     <Box p={isMobile ? 1 : 3}>
       <Stack spacing={3}>
